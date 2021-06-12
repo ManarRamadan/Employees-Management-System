@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Drawer,Avatar, List, ListItem, ListItemText, Divider, Collapse } from '@material-ui/core';
 import { ExpandLess, ExpandMore } from '@material-ui/icons';
 import { useLocation, useHistory } from 'react-router-dom'
+import employees from '../../../assets/images/employees.png'
 import { homeVariables } from "../../../config/home";
 
 const DRAWER_WIDTH = homeVariables.sideDrawerWidth;
@@ -44,7 +45,7 @@ export const SideDrawer=(props)=> {
       }}
     >
       <div className={classes.drawerHeader}>
-        <Avatar className={classes.avatar} variant="rounded" src="/employees.png" />
+        <Avatar className={classes.avatar} variant="rounded" src={employees} />
       </div>
       <Divider />
       <List>
