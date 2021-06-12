@@ -13,7 +13,7 @@ class Routes extends Component {
   );
   render() {
     return (
-      <div id="content" className={`container-fluid ${this.props.mode}`}>
+      <div id="content" className={this.props.mode}>
         <Layout onThemeChange={this.props.onThemeChange} >
           <Switch>
             <Route exact path="/employees" component={Employees} />

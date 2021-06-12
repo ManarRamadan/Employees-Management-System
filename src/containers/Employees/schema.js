@@ -10,7 +10,7 @@ export const validationSchema = Yup.object({
       `Must be ${NAME_LENGTH} characters or less`
     ),
     role: Yup.string()
-    .required("Name is required"),
+    .required("Required"),
     email: Yup
         .string()
         .email("Enter a valid email")

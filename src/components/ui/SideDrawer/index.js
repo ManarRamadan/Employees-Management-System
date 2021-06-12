@@ -1,29 +1,27 @@
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Drawer from '@material-ui/core/Drawer';
-import { Avatar, List, ListItem, ListItemText, Divider, Collapse } from '@material-ui/core';
+import { Drawer,Avatar, List, ListItem, ListItemText, Divider, Collapse } from '@material-ui/core';
 import { ExpandLess, ExpandMore } from '@material-ui/icons';
-import { homeVariables } from "../../../config/home";
 import { useLocation, useHistory } from 'react-router-dom'
+import { homeVariables } from "../../../config/home";
 
-const drawerWidth = homeVariables.sideDrawerWidth;
+const DRAWER_WIDTH = homeVariables.sideDrawerWidth;
 const useStyles = makeStyles((theme) => ({
   drawer: {
-    width: drawerWidth,
+    width: DRAWER_WIDTH,
     flexShrink: 0,
   },
   drawerPaper: {
-    width: drawerWidth,
+    width: DRAWER_WIDTH,
   },
   drawerHeader: {
     display: 'flex',
     alignItems: 'center',
-    padding: theme.spacing(0, 1),
     ...theme.mixins.toolbar,
     justifyContent: 'flex-end',
   },
   avatar: {
-    width: drawerWidth,
+    width: DRAWER_WIDTH,
     height: 180
   }
 }));
@@ -47,7 +45,6 @@ export const SideDrawer=(props)=> {
     >
       <div className={classes.drawerHeader}>
         <Avatar className={classes.avatar} variant="rounded" src="/employees.png" />
-
       </div>
       <Divider />
       <List>

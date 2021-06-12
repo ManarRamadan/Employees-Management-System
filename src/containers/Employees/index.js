@@ -17,8 +17,8 @@ const useStyles = makeStyles({
     wrapper: {
         display: 'flex',
         justifyContent: 'space-between',
-        marginTop:20,
-        marginBottom:20
+        marginTop: 20,
+        marginBottom: 20
     }
 })
 export default function Employees() {
@@ -33,7 +33,7 @@ export default function Employees() {
     const [openModalAdd, setOpenModalAdd] = useState(false);
     const [openModalEdit, setOpenModalEdit] = useState(false);
     const [openModalChangeStatus, setOpenModalChangeStatus] = useState(false);
-    const[isSubmitting,setIsSubmitting]=useState(false)
+    const [isSubmitting, setIsSubmitting] = useState(false)
 
     const resetMessage = () => {
         setTimeout(() => {
@@ -53,10 +53,10 @@ export default function Employees() {
     const handleCloseEdit = () => {
         setOpenModalEdit(false);
     };
-    const handleClickOpenChangeStatus = (e,employee) => {
+    const handleClickOpenChangeStatus = (e, employee) => {
         setOpenModalChangeStatus(true);
         setEmployeeStatus(e.target.value)
-        console.log(e.target.value,employee);
+        console.log(e.target.value, employee);
         setEmployee(employee)
 
     };
@@ -89,9 +89,8 @@ export default function Employees() {
             )
         EmployeeViewModel.getEmployees()
             .then(response => {
-                setEmployees(response.data)
+                setEmployees(response.data.reverse())
                 setLoading(false)
-
             })
             .catch(error => {
                 console.log(error);
@@ -101,7 +100,7 @@ export default function Employees() {
                     message: homeVariables.errorMessage
                 })
             })
-            .then(() => resetMessage())
+
     }, [])
     const formik = useFormik({
         initialValues: {
@@ -116,7 +115,7 @@ export default function Employees() {
                 .then((res) => {
                     console.log(res);
                     var array = [...employees]
-                    array.push(res.data)
+                    array.unshift(res.data)
                     setEmployees(array)
                     setTimeout(() => setMessage({
                         title: homeVariables.successMessageTitle,
@@ -178,18 +177,20 @@ export default function Employees() {
                 })
             })
             .then(setTimeout(() => {
-                
+
                 resetMessage()
             }, 1500))
     }
     const changeEmployeeStatus = () => {
-        setIsSubmitting(true)
-        const employeeData = { ...employee, status: employeeStatus }
-        update(employeeData)
-        setTimeout(() => {
-        setIsSubmitting(false)
-        handleCloseChangeStatus()
-        }, 1500);
+        if (employee.status !== employeeStatus) {
+            setIsSubmitting(true)
+            const employeeData = { ...employee, status: employeeStatus }
+            update(employeeData)
+            setTimeout(() => {
+                setIsSubmitting(false)
+                handleCloseChangeStatus()
+            }, 1500);
+        }
     }
 
     return (

@@ -7,13 +7,12 @@ const useStyles = makeStyles({
     display: 'flex',
     justifyContent: 'flex-end',
     marginTop: '20px'
-
   }
 })
 export function Form({ formik, options }) {
   const classes = useStyles()
   return (
-    <form onSubmit={formik.handleSubmit}>
+    <form onSubmit={formik.handleSubmit} autoComplete="off">
       <TextInput
         label="Full Name"
         id="name"

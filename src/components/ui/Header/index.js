@@ -35,13 +35,13 @@ const useStyles = makeStyles((theme) => ({
     avatar: {
         marginLeft: theme.spacing(2),
     },
-    day:{
-        fontWeight:400,
-        fontSize:15
+    day: {
+        fontWeight: 400,
+        fontSize: 15
     }
 }));
 
-export const Header=(props)=> {
+export const Header = (props) => {
     const classes = useStyles();
     const currentUser = "Manar Ramadan"
     const [mode, setMode] = useState(useTheme().palette.type);
@@ -55,7 +55,7 @@ export const Header=(props)=> {
     const handleThemeChange = (e, checked) => {
         setMode(checked ? "dark" : "light");
     };
-    useEffect(() => {
+    const getToday = () => {
         const date = new Date()
         const currentDate = date.toDateString().split(' ');
         const today = currentDate[0] + ' ' + currentDate[1] + ' ' + currentDate[2] + ', ' + currentDate[3]
@@ -64,7 +64,9 @@ export const Header=(props)=> {
         setDate(today)
         setTime(time);
         setHour(hour);
-       
+    }
+    useEffect(() => {
+        getToday()
     }, [])
     return (
         <AppBar
@@ -78,7 +80,7 @@ export const Header=(props)=> {
                     <MenuIcon />
                 </IconButton>
                 <Typography variant="h6" className={classes.title}>
-                    {hour < 12 ? "Good Morning, "  : hour < 18 ? "Good Afternoon, " : "Good Evening, "}
+                    {hour < 12 ? "Good Morning, " : hour < 18 ? "Good Afternoon, " : "Good Evening, "}
                     <span className={classes.day}>{date} {time}</span>
                 </Typography>
                 <Switch checked={mode === "dark"} onChange={handleThemeChange} />

@@ -4,6 +4,11 @@ import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import MSelect from "@material-ui/core/Select";
+import { homeVariables } from "../../../config/home";
+
+
+const ITEM_HEIGHT = homeVariables.itemHeight;
+const ITEM_PADDING_TOP = homeVariables.itemPaddingTop;
 
 const useStyles = makeStyles((theme) =>({
   formControl: {
@@ -41,7 +46,13 @@ export const Select = (props) => {
             vertical: "top",
             horizontal: "left"
           },
-          getContentAnchorEl: null
+          getContentAnchorEl: null,
+          PaperProps: {
+            style: {
+              maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
+             
+            },
+          },
         }}
       >
         {props.options?.map((option) => (
@@ -49,11 +60,6 @@ export const Select = (props) => {
             {option.name}
           </MenuItem>
         ))}
-        {/* {props.options?.map((option) => (
-              <option value={option}>
-                {option}
-              </option>
-            ))} */}
       </MSelect>
     </FormControl>
   );

@@ -1,3 +1,3 @@
-export * from "./ErrorBoundary/ErrorBoundary";
-export * from "./Form/Form";
+export * from "./ErrorBoundary";
+export * from "./Form";
 

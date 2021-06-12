@@ -3,7 +3,7 @@ import { Header, SideDrawer } from '../../components/ui'
 import { homeVariables } from "../../config/home";
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
-const drawerWidth = homeVariables.sideDrawerWidth;
+const DRAWER_WIDTH = homeVariables.sideDrawerWidth;
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
             easing: theme.transitions.easing.sharp,
             duration: theme.transitions.duration.leavingScreen,
         }),
-        marginLeft: -drawerWidth,
+        marginLeft: -DRAWER_WIDTH,
     },
     contentShift: {
         transition: theme.transitions.create('margin', {
