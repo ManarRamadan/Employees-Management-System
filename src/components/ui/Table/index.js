@@ -28,7 +28,7 @@ const useStyles = makeStyles({
     minWidth: 700,
   },
   root: {
-    // maxHeight: 500
+    minHeight: 500
   }
 });
 export const UITable = ({ schema, data, options, onClick, onChange }) => {

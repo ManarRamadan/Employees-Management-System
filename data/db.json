@@ -1,102 +1,11 @@
 {
   "employees": [
     {
-      "email": "roregepibi@mailinator.com",
-      "name": "done",
-      "role": "Medical Assistant",
-      "status": "Approved",
-      "id": 1
-    },
-    {
-      "email": "roregepibi@mailinator.com",
-      "name": "Ivory Livingston",
-      "role": "President of Sales",
-      "status": "Added",
-      "id": 2
-    },
-    {
-      "email": "roregepibi@mailinator.com",
-      "name": "Ivory ",
-      "role": "President of Sales",
-      "status": "Active",
-      "id": 3
-    },
-    {
-      "email": "roregepibi@mailinator.com",
-      "name": "Ivory ttttttttttt",
-      "role": "President of Sales",
-      "status": "Added",
-      "id": 4
-    },
-    {
       "email": "manar.ramadan1996@gmail.com",
-      "name": "Ahmed Sayeggg",
-      "role": "Medical Assistant",
-      "status": "Added",
-      "id": 5
-    },
-    {
-      "email": "manar.ramadan1996@gmail.com",
-      "name": "Ahm",
-      "role": "Marketing Coordinator",
-      "status": "Added",
-      "id": 6
-    },
-    {
-      "email": "manar.ramadan1996@gmail.com",
-      "name": "t",
-      "role": "Marketing Coordinator",
-      "status": "Added",
-      "id": 7
-    },
-    {
-      "email": "bequcajifo@mailinator.com",
-      "name": "Tanisha Valdez",
-      "role": "Web Designer",
-      "status": "Added",
-      "id": 8
-    },
-    {
-      "email": "manar.ramadan1996@gmail.com",
-      "name": "hello",
-      "role": "Marketing Coordinator",
-      "status": "Added",
-      "id": 9
-    },
-    {
-      "email": "manar.ramadan1996@gmail.com",
-      "name": "y",
-      "role": "Account Executive",
-      "status": "Added",
-      "id": 10
-    },
-    {
-      "email": "admin@example.com",
       "name": "Manar Ramadan",
-      "role": "Marketing Coordinator",
-      "status": "Added",
-      "id": 11
-    },
-    {
-      "email": "manar.ramadan1996@gmail.com",
-      "name": "Ahmed Sayed Gouda ",
-      "role": "Marketing Coordinator",
-      "status": "Added",
-      "id": 12
-    },
-    {
-      "email": "ssss@email.com",
-      "name": "ssssss",
       "role": "Developer",
       "status": "Added",
-      "id": 13
-    },
-    {
-      "email": "shift@email.com",
-      "name": "shift edit",
-      "role": "Developer",
-      "status": "Approved",
-      "id": 14
+      "id": 1
     }
   ],
   "roles": [
